@@ -29,8 +29,9 @@ jobs:
       - name: Get all files and add them to the manifest
         run: echo '{}' | jq --arg files "$(ls *cook)" '.files |= [ $files | split("\n")]' > manifest.json
         
-      - name: Commit change
-        run: git commit -a -m "update manifest"
-        
-      - name: Push change
-        run: git push -u origin main
+      - name: Commit and push change
+        run: |
+          git config --local user.email "janikgar@pm.me"
+          git config --local user.name "Github Actions"
+          git commit -a -m "update manifest"
+          git push -u origin main
