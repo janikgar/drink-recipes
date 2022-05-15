@@ -1,7 +1,10 @@
 {
   "files": [
-    "gin_sour.cook",
-    "martini.cook",
-    "negroni.cook"
+    [
+      "boulevardier.cook",
+      "gin_sour.cook",
+      "martini.cook",
+      "negroni.cook"
+    ]
   ]
 }
