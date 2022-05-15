@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Get all files and add them to the manifest
-        run: echo '{}' | jq --arg files "$(ls *cook)" '.files |=  $files | split("\n")' > manifest.json
+        run: echo '{}' | jq --arg files "$(ls *cook)" '.files |=  [$files | split("\n")][0]' > manifest.json
         
       - name: Commit and push change
         run: |
